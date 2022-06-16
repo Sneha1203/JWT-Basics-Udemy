@@ -1,9 +1,9 @@
 const CustomAPIError = require('../errors/custom-error')
-const errorHandlerMiddleware = (err, req, res, next) => {
-  if (err instanceof CustomAPIError) {
-    return res.status(err.statusCode).json({ msg: err.message })
-  }
-  return res.status(500).send('Something went wrong try again later')
+const errorHandlerMiddleware = (error, request, response, next) => {
+    if(error instanceof CustomAPIError) {
+        return response.status(error.statusCode).json({ msg: error.message })
+    }
+    return response.status(500).send('something went wrong try again later...')
 }
 
 module.exports = errorHandlerMiddleware
