@@ -1,1 +1,1 @@
-# JWT-Basics-Udemy
+# JWT-Basics
